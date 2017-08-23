@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace pb4.Domain
 {
-    public class Class1
+    public class OrderManager
     {
-    }
+		public static void CreateOrder()
+		{
+			Persistence.OrderRepository.CreateOrder();
+		}
+	}
 }
