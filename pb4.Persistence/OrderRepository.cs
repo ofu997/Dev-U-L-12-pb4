@@ -13,7 +13,10 @@ namespace pb4.Persistence
 			var db = new pb4DbEntities();
 			var order = new Order();
 			order.OrderId = Guid.NewGuid();
-			order.Size=1;
+			//order.Size= 1;
+			// this below works for now
+			order.Size = DTO.Enums.SizeType.Large;
+			// DTO.Enums.SizeType.Large
 			order.Crust=0;
 			order.Pepperoni=true;
 			order.Name="the tech academy";

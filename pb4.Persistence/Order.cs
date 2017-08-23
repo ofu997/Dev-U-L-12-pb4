@@ -15,7 +15,7 @@ namespace pb4.Persistence
     public partial class Order
     {
         public System.Guid OrderId { get; set; }
-        public int Size { get; set; }
+        public pb4.DTO.Enums.SizeType Size { get; set; }
         public int Crust { get; set; }
         public bool Sausage { get; set; }
         public bool Pepperoni { get; set; }
