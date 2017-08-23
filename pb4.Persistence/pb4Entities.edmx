@@ -48,7 +48,7 @@
           <Property Name="Address" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Zip" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="PaymentType" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="pb4DbModel.PaymentType" Nullable="false" />
           <Property Name="Complete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="pb4DbEntities" annotation:LazyLoadingEnabled="true">
@@ -56,6 +56,7 @@
         </EntityContainer>
         <EnumType Name="SizeType" a:ExternalTypeName="pb4.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         <EnumType Name="CrustType" a:ExternalTypeName="pb4.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="PaymentType" a:ExternalTypeName="pb4.DTO.Enums.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

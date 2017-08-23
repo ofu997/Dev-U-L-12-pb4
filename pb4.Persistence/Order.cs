@@ -26,7 +26,7 @@ namespace pb4.Persistence
         public string Address { get; set; }
         public string Zip { get; set; }
         public string Phone { get; set; }
-        public int PaymentType { get; set; }
+        public pb4.DTO.Enums.PaymentType PaymentType { get; set; }
         public bool Complete { get; set; }
     }
 }

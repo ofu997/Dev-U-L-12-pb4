@@ -17,13 +17,13 @@ namespace pb4.Persistence
 			// this below works for now
 			order.Size = DTO.Enums.SizeType.Large;
 			// DTO.Enums.SizeType.Large
-			order.Crust=DTO.Enums.CrustType.Regular;
+			order.Crust= DTO.Enums.CrustType.Thick;
 			order.Pepperoni=true;
 			order.Name="the tech academy";
 			order.Address="300 SW 5th Avenue";
 			order.Zip="97201";
 			order.Phone="123-1234";
-			order.PaymentType=0;
+			order.PaymentType=DTO.Enums.PaymentType.Credit;
 			order.TotalCost=16.50M;
 
 			db.Orders.Add(order);
