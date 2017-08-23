@@ -38,7 +38,7 @@
           </Key>
           <Property Name="OrderId" Type="Guid" Nullable="false" />
           <Property Name="Size" Type="pb4DbModel.SizeType" Nullable="false" />
-          <Property Name="Crust" Type="Int32" Nullable="false" />
+          <Property Name="Crust" Type="pb4DbModel.CrustType" Nullable="false" />
           <Property Name="Sausage" Type="Boolean" Nullable="false" />
           <Property Name="Pepperoni" Type="Boolean" Nullable="false" />
           <Property Name="Onions" Type="Boolean" Nullable="false" />
@@ -55,6 +55,7 @@
           <EntitySet Name="Orders" EntityType="Self.Order" />
         </EntityContainer>
         <EnumType Name="SizeType" a:ExternalTypeName="pb4.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="CrustType" a:ExternalTypeName="pb4.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

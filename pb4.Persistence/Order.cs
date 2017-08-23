@@ -16,7 +16,7 @@ namespace pb4.Persistence
     {
         public System.Guid OrderId { get; set; }
         public pb4.DTO.Enums.SizeType Size { get; set; }
-        public int Crust { get; set; }
+        public pb4.DTO.Enums.CrustType Crust { get; set; }
         public bool Sausage { get; set; }
         public bool Pepperoni { get; set; }
         public bool Onions { get; set; }

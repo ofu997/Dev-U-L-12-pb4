@@ -17,7 +17,7 @@ namespace pb4.Persistence
 			// this below works for now
 			order.Size = DTO.Enums.SizeType.Large;
 			// DTO.Enums.SizeType.Large
-			order.Crust=0;
+			order.Crust=DTO.Enums.CrustType.Regular;
 			order.Pepperoni=true;
 			order.Name="the tech academy";
 			order.Address="300 SW 5th Avenue";
