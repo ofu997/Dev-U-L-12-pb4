@@ -16,6 +16,7 @@ namespace pb4.Web
 
 		protected void Button1_Click(object sender, EventArgs e)
 		{
+			// thing works 
 			Domain.OrderManager.CreateOrder();
 		}
 	}
