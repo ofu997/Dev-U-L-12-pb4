@@ -44,7 +44,7 @@
             <asp:TextBox ID="zipTextBox" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label>Phone: </label>
+                <label>Phone number: </label>
             <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
