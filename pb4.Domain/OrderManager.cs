@@ -31,7 +31,8 @@ namespace pb4.Domain
 			order.PaymentType = DTO.Enums.PaymentType.Credit;
 			order.TotalCost = 16.50M;
 			*/
-			orderDTO.OrderId = Guid.NewGuid(); 
+			orderDTO.OrderId = Guid.NewGuid();
+			orderDTO.TotalCost = PizzaPriceManager.CalculateCost(orderDTO);
 			Persistence.OrderRepository.CreateOrder(orderDTO);
 		}
 	}
