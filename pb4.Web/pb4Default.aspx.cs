@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using pb4.DTO.Enums;
 
 namespace pb4.Web
 {
@@ -39,6 +40,78 @@ namespace pb4.Web
 
 			// thing works 
 			Domain.OrderManager.CreateOrder(order);
+		}
+
+		protected void orderButton_Click(object sender, EventArgs e)
+		{
+			var order = new DTO.OrderDTO();
+
+
+			order.Size = determineSize();
+
+			order.Crust = determineCrust();
+
+			order.Sausage = sausageCheckBox.Checked;
+
+			order.Pepperoni = pepperoniCheckBox.Checked;
+
+			order.Onions = onionsCheckBox.Checked;
+
+			order.GreenPeppers = greenPeppersCheckBox.Checked;
+
+			order.Name = nameTextBox.Text;
+
+			order.Address = addressTextBox.Text;
+
+			order.Zip = zipTextBox.Text;
+
+			order.Phone = phoneTextBox.Text;
+
+			order.PaymentType = determinePaymentType();
+
+			Domain.OrderManager.CreateOrder(order);
+		}
+
+		private PaymentType determinePaymentType()
+		{
+			DTO.Enums.PaymentType paymentType;
+			if (cashRadioButton.Checked)
+			{
+				paymentType = DTO.Enums.PaymentType.Cash;
+			}
+			else if (creditRadioButton.Checked)
+			{
+				paymentType = DTO.Enums.PaymentType.Credit;
+			}
+			else
+			{
+				throw new Exception("Payment type not selected . "); 
+
+			}
+			return paymentType;
+		}
+
+		private CrustType determineCrust()
+		{
+			// throw new NotImplementedException();
+			DTO.Enums.CrustType crust;
+			if (!Enum.TryParse(crustDropDownList.SelectedValue, out crust))
+			{
+				throw new Exception("Can't determine pizza crust.");
+			}
+			return crust; 
+
+		}
+
+		private DTO.Enums.SizeType determineSize()
+		{
+			DTO.Enums.SizeType size;
+			if (!Enum.TryParse(sizeDropDownList.SelectedValue, out size))
+			{
+				throw new Exception("Could not determine pizza crust~!");
+				//order.Size = size;
+			}
+			return size; 
 		}
 	}
 }

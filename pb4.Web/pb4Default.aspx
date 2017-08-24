@@ -17,12 +17,21 @@
 
             <div class="form-group">
                 <label> Size: </label>
-                <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control"></asp:DropDownList>
+                <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control">
+                    <asp:ListItem Text="Small (12 inch) $12" Value="Small" />
+                    <asp:ListItem Text="Medium (14 inch) $14" Value="Medium" />
+                    <asp:ListItem Text="Large (16 inch) $16" Value="Large" />
+                </asp:DropDownList>
             </div>
 
             <div class="form-group">
                 <label> Crust: </label>
-                <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control"></asp:DropDownList>
+                <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control">
+                <asp:ListItem Text="Choose One..." Selected="True" />
+                <asp:ListItem Text="Regular" Value="Regular" />
+                <asp:ListItem Text="Thin" Value="Thin" />
+                <asp:ListItem Text="Thick (+$2)" Value="Thick" />
+                </asp:DropDownList>
             </div>
         
             <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" />Sausage</label></div>
@@ -66,7 +75,7 @@
             
             <p>&nbsp;</p>
             <p>&nbsp;</p>
-            <asp:Button ID="orderButton" runat="server" Text=" ~ Order ~ " CssClass="btn btn-lg btn-primary"/>
+            <asp:Button ID="orderButton" runat="server" Text=" ~ Order ~ " CssClass="btn btn-lg btn-primary" OnClick="orderButton_Click"/>
 
             <h3>Total cost: <asp:Label ID="totalLabel" runat="server" Text=""></asp:Label></h3>
             <!--
