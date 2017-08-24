@@ -8,8 +8,10 @@ namespace pb4.Domain
 {
     public class OrderManager
     {
-		public static void CreateOrder()
+		public static void CreateOrder(DTO.OrderDTO orderDTO)
 		{
+			// MOVED from DOMAIN to WEB
+			/*
 			// syntax good here 
 
 			var order = new DTO.OrderDTO();
@@ -28,8 +30,8 @@ namespace pb4.Domain
 			order.Phone = "123-1234";
 			order.PaymentType = DTO.Enums.PaymentType.Credit;
 			order.TotalCost = 16.50M;
-
-			Persistence.OrderRepository.CreateOrder(order);
+			*/
+			Persistence.OrderRepository.CreateOrder(orderDTO);
 		}
 	}
 }
