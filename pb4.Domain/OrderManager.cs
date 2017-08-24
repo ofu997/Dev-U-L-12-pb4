@@ -31,6 +31,7 @@ namespace pb4.Domain
 			order.PaymentType = DTO.Enums.PaymentType.Credit;
 			order.TotalCost = 16.50M;
 			*/
+			orderDTO.OrderId = Guid.NewGuid(); 
 			Persistence.OrderRepository.CreateOrder(orderDTO);
 		}
 	}
