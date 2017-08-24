@@ -16,7 +16,7 @@ namespace pb4.Web
 
 		protected void Button1_Click(object sender, EventArgs e)
 		{
-			// came from DOMAIN OrderManager
+			// came from DOMAIN OrderManager.
 
 			// syntax good here 
 
