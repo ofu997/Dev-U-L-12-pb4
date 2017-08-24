@@ -26,5 +26,6 @@ namespace pb4.Persistence
         }
     
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<PizzaPrice> PizzaPrices { get; set; }
     }
 }

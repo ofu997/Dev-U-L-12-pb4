@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ee35826faa5f41639f0d1b227d7f9f10" Name="Diagram1">
         <EntityTypeShape EntityType="pb4DbModel.Order" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pb4DbModel.PizzaPrice" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

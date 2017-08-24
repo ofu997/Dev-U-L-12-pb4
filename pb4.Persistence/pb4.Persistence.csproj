@@ -68,6 +68,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pb4Entities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PizzaPrice.cs">
+      <DependentUpon>pb4Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaPriceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
