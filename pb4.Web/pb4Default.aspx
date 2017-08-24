@@ -17,7 +17,8 @@
 
             <div class="form-group">
                 <label> Size: </label>
-                <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control">
+                <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="recalculateTotalCost">
+                    <asp:ListItem Text="Choose One..." Selected="True" Value=""/>
                     <asp:ListItem Text="Small (12 inches): $12" Value="Small" />
                     <asp:ListItem Text="Medium (14 inches): $14" Value="Medium" />
                     <asp:ListItem Text="Large (16 inches): $16" Value="Large" />
@@ -26,18 +27,18 @@
 
             <div class="form-group">
                 <label> Crust: </label>
-                <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control">
-                <asp:ListItem Text="Choose One..." Selected="True" />
+                <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="recalculateTotalCost">
+                <asp:ListItem Text="Choose One..." Selected="True" Value="" />
                 <asp:ListItem Text="Regular" Value="Regular" />
                 <asp:ListItem Text="Thin" Value="Thin" />
                 <asp:ListItem Text="Thick (+$2)" Value="Thick" />
                 </asp:DropDownList>
             </div>
         
-            <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" />Sausage</label></div>
-            <div class="checkbox"><label><asp:CheckBox ID="pepperoniCheckBox" runat="server" />Pepperoni</label></div>
-            <div class="checkbox"><label><asp:CheckBox ID="onionsCheckBox" runat="server" />Onions</label></div>
-            <div class="checkbox"><label><asp:CheckBox ID="greenPeppersCheckBox" runat="server" />Green Peppers</label></div>
+            <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"/>Sausage</label></div>
+            <div class="checkbox"><label><asp:CheckBox ID="pepperoniCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"/>Pepperoni</label></div>
+            <div class="checkbox"><label><asp:CheckBox ID="onionsCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"/>Onions</label></div>
+            <div class="checkbox"><label><asp:CheckBox ID="greenPeppersCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"/>Green Peppers</label></div>
 
             <h3> Deliver to: </h3>
             <div class="form-group">
@@ -78,9 +79,9 @@
             <asp:Button ID="orderButton" runat="server" Text=" ~ Order ~ " CssClass="btn btn-lg btn-primary" OnClick="orderButton_Click"/>
 
             <h3>Total cost: <asp:Label ID="totalLabel" runat="server" Text=""></asp:Label></h3>
-            <!--
+            <%--
                 <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
-            -->
+            --%>
         </div>
     </form>
     <script src="Scripts/jquery-3.1.1.min.js"></script>
