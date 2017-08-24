@@ -18,9 +18,9 @@
             <div class="form-group">
                 <label> Size: </label>
                 <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control">
-                    <asp:ListItem Text="Small (12 inch) $12" Value="Small" />
-                    <asp:ListItem Text="Medium (14 inch) $14" Value="Medium" />
-                    <asp:ListItem Text="Large (16 inch) $16" Value="Large" />
+                    <asp:ListItem Text="Small (12 inches) $12" Value="Small" />
+                    <asp:ListItem Text="Medium (14 inches) $14" Value="Medium" />
+                    <asp:ListItem Text="Large (16 inches) $16" Value="Large" />
                 </asp:DropDownList>
             </div>
 
