@@ -43,31 +43,42 @@ namespace pb4.Web
 		*/
 		protected void orderButton_Click(object sender, EventArgs e)
 		{
-			var order = buildOrder();
-			/*
-			order.Size = determineSize();
+			if (nameTextBox.Text.Trim().Length == 0)
+			{
+				validationLabel.Text = "Please enter a name";
+				validationLabel.Visible = true;
+				return;
+			}
+			if (addressTextBox.Text.Trim().Length == 0)
+			{
+				validationLabel.Text = "Please enter an address";
+				validationLabel.Visible = true;
+				return;
+			}
+			if (zipTextBox.Text.Trim().Length == 0)
+			{
+				validationLabel.Text = "Please ente ra zip code";
+				validationLabel.Visible = true;
+				return;
+			}
+			if (phoneTextBox.Text.Trim().Length == 0)
+			{
+				validationLabel.Text = "Please enter a phone number";
+				validationLabel.Visible = true;
+				return;
+			}
 
-			order.Crust = determineCrust();
-
-			order.Sausage = sausageCheckBox.Checked;
-
-			order.Pepperoni = pepperoniCheckBox.Checked;
-
-			order.Onions = onionsCheckBox.Checked;
-
-			order.GreenPeppers = greenPeppersCheckBox.Checked;
-
-			order.Name = nameTextBox.Text;
-
-			order.Address = addressTextBox.Text;
-
-			order.Zip = zipTextBox.Text;
-
-			order.Phone = phoneTextBox.Text;
-
-			order.PaymentType = determinePaymentType();
-			*/
-			Domain.OrderManager.CreateOrder(order);
+			try
+			{
+				var order = buildOrder();
+				Domain.OrderManager.CreateOrder(order);
+			}
+			catch (Exception e2)
+			{
+				validationLabel.Text = e2.Message;
+				validationLabel.Visible = true;
+				return; 
+			}
 		}
 
 		private PaymentType determinePaymentType()
@@ -117,8 +128,15 @@ namespace pb4.Web
 			if (crustDropDownList.SelectedValue == String.Empty) return;
 
 			var order = buildOrder();
-			totalLabel.Text=Domain.PizzaPriceManager.CalculateCost(order).ToString("C");
-	
+
+			try
+			{
+				totalLabel.Text = Domain.PizzaPriceManager.CalculateCost(order).ToString("C");
+			}
+			catch
+			{
+				//swww
+			}
 		}
 
 		private DTO.OrderDTO buildOrder()

@@ -62,7 +62,7 @@
 
             <div class="radio">
                 <label>
-                    <asp:RadioButton ID="cashRadioButton" runat="server" GroupName="PaymentGroup"/>
+                    <asp:RadioButton ID="cashRadioButton" runat="server" GroupName="PaymentGroup" Checked="true"/>
                     Cash
                 </label>
             </div>
@@ -73,11 +73,13 @@
                     Credit
                 </label>
             </div>
-            
+            <p>&nbsp;</p><p>&nbsp;</p>
+            <asp:Label ID="validationLabel" runat="server" Text="" Visible="false"  CssClass="danger"></asp:Label>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <asp:Button ID="orderButton" runat="server" Text=" ~ Order ~ " CssClass="btn btn-lg btn-primary" OnClick="orderButton_Click"/>
-
+            
+    
             <h3>Total cost: <asp:Label ID="totalLabel" runat="server" Text=""></asp:Label></h3>
             <%--
                 <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
