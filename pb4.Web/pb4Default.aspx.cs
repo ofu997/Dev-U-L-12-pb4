@@ -72,7 +72,7 @@ namespace pb4.Web
 			{
 				var order = buildOrder();
 				Domain.OrderManager.CreateOrder(order);
-				// 20:32
+				// 20:32//
 				Response.Redirect("Success.aspx");
 			}
 			catch (Exception e2)
