@@ -57,7 +57,7 @@ namespace pb4.Web
 			}
 			if (zipTextBox.Text.Trim().Length == 0)
 			{
-				validationLabel.Text = "Please ente ra zip code";
+				validationLabel.Text = "Please enter a zip code";
 				validationLabel.Visible = true;
 				return;
 			}
@@ -72,9 +72,11 @@ namespace pb4.Web
 			{
 				var order = buildOrder();
 				Domain.OrderManager.CreateOrder(order);
+				// 20:32
+				Response.Redirect("Success.aspx");
 			}
 			catch (Exception e2)
-			{
+			{ // 16:32
 				validationLabel.Text = e2.Message;
 				validationLabel.Visible = true;
 				return; 
@@ -135,7 +137,7 @@ namespace pb4.Web
 			}
 			catch
 			{
-				//swww
+				// 17:15
 			}
 		}
 
