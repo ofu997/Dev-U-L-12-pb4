@@ -55,8 +55,11 @@ namespace pb4.Persistence
 			order.PaymentType = orderDTO.PaymentType;
 			order.Complete = orderDTO.Complete;
 
+
 			return order;
 		}
+
+
 
 		public static List<DTO.OrderDTO> GetOrders()
 		{
@@ -88,10 +91,20 @@ namespace pb4.Persistence
 				orderDTO.GreenPeppers = order.GreenPeppers;
 				orderDTO.PaymentType = order.PaymentType;
 				orderDTO.Complete = order.Complete;
+				// need this to show total cost
+				orderDTO.TotalCost = order.TotalCost;
 
 				ordersDTO.Add(orderDTO);
 			}
 			return ordersDTO;
+		}
+
+		public static void CompleteOrder(Guid orderId)
+		{
+			var db = new pb4DbEntities();
+			var order = db.Orders.FirstOrDefault(pb4 => pb4.OrderId == orderId);
+			order.Complete = true;
+			db.SaveChanges();
 		}
 	}
 }
