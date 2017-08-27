@@ -152,6 +152,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="OrderManagement.aspx" />
     <Content Include="pb4Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="OrderManagement.aspx.cs">
+      <DependentUpon>OrderManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderManagement.aspx.designer.cs">
+      <DependentUpon>OrderManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="pb4Default.aspx.cs">
       <DependentUpon>pb4Default.aspx</DependentUpon>

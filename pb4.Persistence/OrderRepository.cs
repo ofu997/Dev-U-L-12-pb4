@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity; 
 
 namespace pb4.Persistence
 {
@@ -56,5 +57,41 @@ namespace pb4.Persistence
 
 			return order;
 		}
-    }
+
+		public static List<DTO.OrderDTO> GetOrders()
+		{
+			var db = new pb4DbEntities();
+			// complete for completed 
+			var orders = db.Orders.Where(p=>p.Complete==false).ToList();
+
+			var ordersDTO = convertToDTO(orders);
+			return ordersDTO;
+		}
+		private static List<DTO.OrderDTO> convertToDTO(List<Order> orders)
+		{
+			var ordersDTO = new List<DTO.OrderDTO>();
+			foreach (var order in orders)
+			{
+				var orderDTO = new DTO.OrderDTO();
+				orderDTO.OrderId = order.OrderId;
+				orderDTO.Crust = order.Crust;
+				orderDTO.Size = order.Size;
+				orderDTO.Name = order.Name;
+				// do hcange these 
+				orderDTO.Address = order.Address;
+				orderDTO.Zip = order.Zip;
+				orderDTO.Phone = order.Phone;
+				// toppings 12:00
+				orderDTO.Sausage = order.Sausage;
+				orderDTO.Pepperoni = order.Pepperoni;
+				orderDTO.Onions = order.Onions;
+				orderDTO.GreenPeppers = order.GreenPeppers;
+				orderDTO.PaymentType = order.PaymentType;
+				orderDTO.Complete = order.Complete;
+
+				ordersDTO.Add(orderDTO);
+			}
+			return ordersDTO;
+		}
+	}
 }
